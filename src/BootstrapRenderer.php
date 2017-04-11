@@ -529,7 +529,7 @@ class BootstrapRenderer implements IExtendedFormRenderer
         $el->appendAttribute('class', 'btn');
         $el->addAttributes($attrs);
         if (!$this->hasButtonTypeClass($el)) {
-            if ($button instanceof SubmitButton) {
+            if ($button instanceof SubmitButton && $this->renderMode !== RenderModeEnum::INLINE) {
                 $el->appendAttribute('class', 'btn-primary');
             } else {
                 $el->appendAttribute('class', 'btn-default');
